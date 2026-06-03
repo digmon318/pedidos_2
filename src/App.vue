@@ -1,4 +1,3 @@
-
 <template>
   <div class="container">
 
@@ -82,7 +81,7 @@
           <p>El carrito está vacío 🍔</p>
         </div>
 
-        <div class="carrito-items">
+        <div class="carrito-items" v-else>
           <div v-for="item in carrito" :key="item.id" class="item-carrito">
             <div class="item-detalles">
               <strong>{{ item.nombre }}</strong>
@@ -244,6 +243,7 @@ const finalizarCompra = () => {
 
 <style>
 /* RESET Y GENERAL */
+* { box-sizing: border-box; } /* Crucial para evitar desbordes en paddings */
 body { margin: 0; font-family: 'Poppins', sans-serif; background: #f4f7f6; }
 .container { padding: 20px; max-width: 1400px; margin: auto; }
 
@@ -315,20 +315,58 @@ body { margin: 0; font-family: 'Poppins', sans-serif; background: #f4f7f6; }
 .btn-stock { flex: 1 !important; background: #2196f3 !important; }
 button:disabled { background: #ccc !important; cursor: not-allowed; }
 
-/* CARRITO PANEL */
+/* CARRITO PANEL MODIFICADO */
 .panel-carrito {
   position: fixed; right: 0; top: 0; width: 400px; height: 100%;
   background: white; z-index: 2000; display: flex; flex-direction: column;
   box-shadow: -5px 0 25px rgba(0,0,0,0.1);
 }
-.carrito-header { padding: 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
-.carrito-items { flex: 1; overflow-y: auto; padding: 20px; }
+.carrito-header { 
+  padding: 20px 25px; 
+  border-bottom: 1px solid #eee; 
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
+}
+.carrito-header h2 { margin: 0; }
+
+/* Botón de cerrar estilizado de forma circular y moderna */
+.cerrar-panel {
+  background: #f5f5f5;
+  color: #333;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.cerrar-panel:hover {
+  background: #ff5f6d;
+  color: white;
+}
+
+.carrito-items { flex: 1; overflow-y: auto; padding: 20px 25px; }
 .item-carrito {
   display: flex; justify-content: space-between; align-items: center;
   background: #f9f9f9; padding: 12px; border-radius: 12px; margin-bottom: 10px;
 }
 .item-total { display: flex; align-items: center; gap: 10px; font-weight: bold; }
 .item-total button { background: none; border: none; cursor: pointer; }
+
+/* Estado vacío despegado de la derecha y centrado correctamente */
+.carrito-vacio {
+  padding: 60px 25px;
+  text-align: center;
+  color: #777;
+  font-size: 1.1rem;
+  width: 100%;
+}
 
 .carrito-footer { padding: 25px; border-top: 1px solid #eee; }
 .fila-total { display: flex; justify-content: space-between; font-size: 1.4rem; margin-bottom: 15px; }
