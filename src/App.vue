@@ -168,8 +168,8 @@ const productos = ref([
   { id: 29, nombre: 'Postre Tres Leches', categoria: 'Postres', descripcion: 'Postre de la casa', precio: 8000, stock: 10, imagen: 'https://cdn0.recetasgratis.net/es/posts/0/3/4/postre_de_tres_leches_frio_34430_600.jpg' },
   { id: 30, nombre: 'Brownie', categoria: 'Postres', descripcion: 'Brownie chocolate', precio: 7000, stock: 10, imagen: 'https://www.cocinista.es/download/bancorecursos/recetas/receta-brownies.jpg' },
   // PRODUCTOS PARA TAPAR HUECOS
-  { id: 31, nombre: 'Crepes de Nutella', categoria: 'Postres', descripcion: 'Con frutas frescas', precio: 12000, stock: 10, imagen: 'https://imag.bonviveur.com/crepes-de-nutella.jpg' },
-  { id: 32, nombre: 'Churros con Chocolate', categoria: 'Postres', descripcion: 'Porción de 5 unidades', precio: 10000, stock: 10, imagen: 'https://www.recetasderechupete.com/wp-content/uploads/2019/11/Churros-caseros.jpg' }
+  { id: 31, nombre: 'Crepes de Nutella', categoria: 'Postres', descripcion: 'Con frutas frescas', precio: 12000, stock: 10, imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNJ5dcglHStRAHEBDXrloNWaD2Ax8S7n5xcg&s' },
+  { id: 32, nombre: 'Churros con Chocolate', categoria: 'Postres', descripcion: 'Porción de 5 unidades', precio: 10000, stock: 10, imagen: 'https://mandolina.co/wp-content/uploads/2024/02/receta-de-churros-de-chocolate-mandolina-1200x900.jpg' }
 ])
 
 const carrito = ref([])
