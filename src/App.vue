@@ -135,41 +135,41 @@ const nuevo = ref({
   nombre: '', descripcion: '', precio: null, stock: null, categoria: '', imagen: ''
 })
 
-// LISTA DE 32 PRODUCTOS (AÑADIDOS 2 MÁS PARA COMPLETAR LA GRILLA)
+// LISTA DE PRODUCTOS CON ENLACES DE IMÁGENES REPARADOS Y VERIFICADOS
 const productos = ref([
-  { id: 1, nombre: 'Hamburguesa Clásica', categoria: 'Hamburguesas', descripcion: 'Carne y queso', precio: 18000, stock: 10, imagen: 'https://img.hogar.mapfre.es/wp-content/uploads/2018/09/hamburguesa-sencilla.jpg' },
-  { id: 2, nombre: 'Hamburguesa Doble', categoria: 'Hamburguesas', descripcion: 'Doble carne', precio: 22000, stock: 10, imagen: 'https://progcarne.com/storage/app/uploads/public/608/6d1/8b0/6086d18b065a7811052900.jpg' },
-  { id: 3, nombre: 'Hamburguesa BBQ', categoria: 'Hamburguesas', descripcion: 'Salsa BBQ', precio: 20000, stock: 10, imagen: 'https://www.recetasnestlecam.com/sites/default/files/srh_recipes/74e1a2dfe688f08eedf86a3711c8e4fb.png' },
-  { id: 4, nombre: 'Pizza Personal', categoria: 'Pizzas', descripcion: 'Pizza pequeña', precio: 20000, stock: 10, imagen: 'https://www.tupperware.com/cdn/shop/articles/pypavrtlteochfsubmyt-412455.jpg?v=1647285652' },
-  { id: 5, nombre: 'Pizza Hawaiana', categoria: 'Pizzas', descripcion: 'Jamón y piña', precio: 22000, stock: 10, imagen: 'https://irecetasfaciles.com/wp-content/uploads/2020/03/pizza-hawaiana.jpg' },
-  { id: 6, nombre: 'Pizza Pepperoni', categoria: 'Pizzas', descripcion: 'Pepperoni', precio: 23000, stock: 10, imagen: 'https://ik.imagekit.io/smithfield/armour/4353bced-f940-00d0-8c6e-13a0a4a7f5c2/2ac60829-5178-4a6e-80cf-6ca43d862cee/Quick-and-Easy-Pepperoni-Pizza-700x700.jpeg' },
-  { id: 7, nombre: 'Papas Pequeñas', categoria: 'Papas', descripcion: 'Papas fritas', precio: 8000, stock: 10, imagen: 'https://houseofbpty.com/wp-content/uploads/2022/11/Baby-Potatoes-800x530.jpg' },
-  { id: 8, nombre: 'Papas Grandes', categoria: 'Papas', descripcion: 'Papas fritas grandes', precio: 12000, stock: 10, imagen: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhS280bw-krYPp2dukCuyXD2UFTjXCboDVPvpF33OPQcss6hQdXEk7OESRFk35p2sPrSZvKKTJSJN11nRxJp3U-aMsji9SNMFKMDHxcvKFoUx2MQ6xLXpbiF1wcGGmXd_TST84wxeDdZM1K/s1600/PATATAS+COCIDAS+Y+LUEGO+FRITAS+(3).jpg' },
-  { id: 9, nombre: 'Salchipapa', categoria: 'Papas', descripcion: 'Salchicha y papas', precio: 15000, stock: 10, imagen: 'https://imag.bonviveur.com/emplatado-final-de-las-salchipapas.jpg' },
-  { id: 10, nombre: 'Hot Dog', categoria: 'Hot Dogs', descripcion: 'Perro caliente', precio: 10000, stock: 10, imagen: 'https://egcexswrzkz.exactdn.com/wp-content/uploads/2026/04/perrito-caliente.jpg' },
-  { id: 11, nombre: 'Hot Dog Especial', categoria: 'Hot Dogs', descripcion: 'Perro especial', precio: 14000, stock: 10, imagen: 'https://www.lavanguardia.com/files/og_thumbnail/uploads/2020/04/20/5ea0a4775e8dd.jpeg' },
-  { id: 12, nombre: 'Arepa con Carne', categoria: 'Arepas', descripcion: 'Arepa rellena', precio: 12000, stock: 10, imagen: 'https://familiakitchen.com/wp-content/uploads/2021/06/Carne-mechada-apepa.jpg' },
-  { id: 13, nombre: 'Arepa con Pollo', categoria: 'Arepas', descripcion: 'Arepa pollo', precio: 12000, stock: 10, imagen: 'https://comedera.com/wp-content/uploads/sites/9/2025/10/Arepa-de-pollo-colombia.webp' },
-  { id: 14, nombre: 'Sandwich Jamón', categoria: 'Sandwiches', descripcion: 'Sandwich J&Q', precio: 9000, stock: 10, imagen: 'https://comedera.com/wp-content/uploads/sites/9/2021/03/sandwich-de-jamon-y-queso.jpg' },
-  { id: 15, nombre: 'Sandwich Pollo', categoria: 'Sandwiches', descripcion: 'Sandwich pollo', precio: 11000, stock: 10, imagen: 'https://imag.bonviveur.com/sandwich-de-pollo.jpg' },
-  { id: 16, nombre: 'Gaseosa', categoria: 'Bebidas', descripcion: 'Bebida fría', precio: 5000, stock: 10, imagen: 'https://www.aguaparatuvida.com.ar/img/novedades/106.jpg' },
-  { id: 17, nombre: 'Jugo Natural', categoria: 'Bebidas', descripcion: 'Jugo natural', precio: 6000, stock: 10, imagen: 'https://k-listo.com/wp-content/uploads/2021/11/JUGOS.jpg' },
-  { id: 18, nombre: 'Malteada', categoria: 'Bebidas', descripcion: 'Malteada cremosas', precio: 9000, stock: 10, imagen: 'https://i.blogs.es/c6f09d/como-hacer-malteada-chocolate-cremosa-receta-facil-mundo/840_560.jpg' },
-  { id: 19, nombre: 'Café', categoria: 'Bebidas', descripcion: 'Café caliente', precio: 4000, stock: 10, imagen: 'https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG' },
-  { id: 20, nombre: 'Capuccino', categoria: 'Bebidas', descripcion: 'Capuccino', precio: 7000, stock: 10, imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Cappuccino_PeB.jpg/1280px-Cappuccino_PeB.jpg' },
-  { id: 21, nombre: 'Empanada', categoria: 'Entradas', descripcion: 'Empanada carne', precio: 3000, stock: 10, imagen: 'https://imag.bonviveur.com/empanadas-colombianas.jpg' },
-  { id: 22, nombre: 'Pastel de Pollo', categoria: 'Entradas', descripcion: 'Hojaldre pollo', precio: 5000, stock: 10, imagen: 'https://exhibirequipos.com/wp-content/uploads/2020/03/pastel-de-pollo-1.jpg' },
-  { id: 23, nombre: 'Chorizo', categoria: 'Entradas', descripcion: 'Chorizo santandereano', precio: 6000, stock: 10, imagen: 'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/b66f872a179dea7b8d6f717b99077bf9/Derivates/5649f5b2588a2556b3e4517d13ed7a17404c5e6e.jpg' },
-  { id: 24, nombre: 'Costillas BBQ', categoria: 'Especiales', descripcion: 'Costillas de cerdo', precio: 28000, stock: 10, imagen: 'https://i.blogs.es/5fc93e/1/650_1200.jpg' },
-  { id: 25, nombre: 'Pollo Broaster', categoria: 'Especiales', descripcion: 'Pollo frito', precio: 25000, stock: 10, imagen: 'https://imag.bonviveur.com/pollo-broaster.jpg' },
-  { id: 26, nombre: 'Alitas BBQ', categoria: 'Especiales', descripcion: 'Alitas melosas', precio: 18000, stock: 10, imagen: 'https://www.unileverfoodsolutions.com.co/dam/global-ufs/mcos/NOLA/calcmenu/recipes/col-recipies/recetas-fruco-bbq/Alitas-BBQ-1200x709.jpg' },
-  { id: 27, nombre: 'Alitas Picantes', categoria: 'Especiales', descripcion: 'Alitas buffalo', precio: 18000, stock: 10, imagen: 'https://sandersonfarms.com/wp-content/uploads/2020/12/Sanderson-Farms_Kevin-Rathbuns-Spicy-Chicken-Wings_28218.jpg' },
-  { id: 28, nombre: 'Helado', categoria: 'Postres', descripcion: 'Copa helado', precio: 6000, stock: 10, imagen: 'https://images.cookforyourlife.org/wp-content/uploads/2020/06/Chocolate-Whipped-Ice-Cream-shutterstock_1010248351.jpg' },
-  { id: 29, nombre: 'Postre Tres Leches', categoria: 'Postres', descripcion: 'Postre de la casa', precio: 8000, stock: 10, imagen: 'https://cdn0.recetasgratis.net/es/posts/0/3/4/postre_de_tres_leches_frio_34430_600.jpg' },
-  { id: 30, nombre: 'Brownie', categoria: 'Postres', descripcion: 'Brownie chocolate', precio: 7000, stock: 10, imagen: 'https://www.cocinista.es/download/bancorecursos/recetas/receta-brownies.jpg' },
-  // PRODUCTOS PARA TAPAR HUECOS
-  { id: 31, nombre: 'Crepes de Nutella', categoria: 'Postres', descripcion: 'Con frutas frescas', precio: 12000, stock: 10, imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNJ5dcglHStRAHEBDXrloNWaD2Ax8S7n5xcg&s' },
-  { id: 32, nombre: 'Churros con Chocolate', categoria: 'Postres', descripcion: 'Porción de 5 unidades', precio: 10000, stock: 10, imagen: 'https://mandolina.co/wp-content/uploads/2024/02/receta-de-churros-de-chocolate-mandolina-1200x900.jpg' }
+  { id: 1, nombre: 'Hamburguesa Clásica', categoria: 'Hamburguesas', descripcion: 'Carne y queso', precio: 18000, stock: 10, imagen: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&auto=format&fit=crop&q=60' },
+  { id: 2, nombre: 'Hamburguesa Doble', categoria: 'Hamburguesas', descripcion: 'Doble carne', precio: 22000, stock: 10, imagen: 'https://images.unsplash.com/photo-1549611016-3a70d82b5040?w=500&auto=format&fit=crop&q=60' },
+  { id: 3, nombre: 'Hamburguesa BBQ', categoria: 'Hamburguesas', descripcion: 'Salsa BBQ', precio: 20000, stock: 10, imagen: 'https://images.unsplash.com/photo-1521305916504-4a1121188589?w=500&auto=format&fit=crop&q=60' },
+  { id: 4, nombre: 'Pizza Personal', categoria: 'Pizzas', descripcion: 'Pizza pequeña', precio: 20000, stock: 10, imagen: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&auto=format&fit=crop&q=60' },
+  { id: 5, nombre: 'Pizza Hawaiana', categoria: 'Pizzas', descripcion: 'Jamón y piña', precio: 22000, stock: 10, imagen: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&auto=format&fit=crop&q=60' },
+  { id: 6, nombre: 'Pizza Pepperoni', categoria: 'Pizzas', descripcion: 'Pepperoni', precio: 23000, stock: 10, imagen: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&auto=format&fit=crop&q=60' },
+  { id: 7, nombre: 'Papas Pequeñas', categoria: 'Papas', descripcion: 'Papas fritas', precio: 8000, stock: 10, imagen: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500&auto=format&fit=crop&q=60' },
+  { id: 8, nombre: 'Papas Grandes', categoria: 'Papas', descripcion: 'Papas fritas grandes', precio: 12000, stock: 10, imagen: 'https://images.unsplash.com/photo-1576107232684-1279f390859f?w=500&auto=format&fit=crop&q=60' },
+  { id: 9, nombre: 'Salchipapa', categoria: 'Papas', descripcion: 'Salchicha y papas', precio: 15000, stock: 10, imagen: 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=500&auto=format&fit=crop&q=60' },
+  { id: 10, nombre: 'Hot Dog', categoria: 'Hot Dogs', descripcion: 'Perro caliente', precio: 10000, stock: 10, imagen: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?w=500&auto=format&fit=crop&q=60' },
+  { id: 11, nombre: 'Hot Dog Especial', categoria: 'Hot Dogs', descripcion: 'Perro especial', precio: 14000, stock: 10, imagen: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=500&auto=format&fit=crop&q=60' },
+  { id: 12, nombre: 'Arepa con Carne', categoria: 'Arepas', descripcion: 'Arepa rellena', precio: 12000, stock: 10, imagen: 'https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=500&auto=format&fit=crop&q=60' },
+  { id: 13, nombre: 'Arepa con Pollo', categoria: 'Arepas', descripcion: 'Arepa pollo', precio: 12000, stock: 10, imagen: 'https://images.unsplash.com/photo-1625182630224-e1473138b725?w=500&auto=format&fit=crop&q=60' },
+  { id: 14, nombre: 'Sandwich Jamón', categoria: 'Sandwiches', descripcion: 'Sandwich J&Q', precio: 9000, stock: 10, imagen: 'https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?w=500&auto=format&fit=crop&q=60' },
+  { id: 15, nombre: 'Sandwich Pollo', categoria: 'Sandwiches', descripcion: 'Sandwich pollo', precio: 11000, stock: 10, imagen: 'https://images.unsplash.com/photo-1567137222666-41f237efb993?w=500&auto=format&fit=crop&q=60' },
+  { id: 16, nombre: 'Gaseosa', categoria: 'Bebidas', descripcion: 'Bebida fría', precio: 5000, stock: 10, imagen: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=60' },
+  { id: 17, nombre: 'Jugo Natural', categoria: 'Bebidas', descripcion: 'Jugo natural', precio: 6000, stock: 10, imagen: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500&auto=format&fit=crop&q=60' },
+  { id: 18, nombre: 'Malteada', categoria: 'Bebidas', descripcion: 'Malteada cremosas', precio: 9000, stock: 10, imagen: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&auto=format&fit=crop&q=60' },
+  { id: 19, nombre: 'Café', categoria: 'Bebidas', descripcion: 'Café caliente', precio: 4000, stock: 10, imagen: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=60' },
+  { id: 20, nombre: 'Capuccino', categoria: 'Bebidas', descripcion: 'Capuccino', precio: 7000, stock: 10, imagen: 'https://images.unsplash.com/photo-1534778101976-62847782c213?w=500&auto=format&fit=crop&q=60' },
+  { id: 21, nombre: 'Empanada', categoria: 'Entradas', descripcion: 'Empanada carne', precio: 3000, stock: 10, imagen: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&auto=format&fit=crop&q=60' },
+  { id: 22, nombre: 'Pastel de Pollo', categoria: 'Entradas', descripcion: 'Hojaldre pollo', precio: 5000, stock: 10, imagen: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=500&auto=format&fit=crop&q=60' },
+  { id: 23, nombre: 'Chorizo', categoria: 'Entradas', descripcion: 'Chorizo santandereano', precio: 6000, stock: 10, imagen: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500&auto=format&fit=crop&q=60' },
+  { id: 24, nombre: 'Costillas BBQ', categoria: 'Especiales', descripcion: 'Costillas de cerdo', precio: 28000, stock: 10, imagen: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60' },
+  { id: 25, nombre: 'Pollo Broaster', categoria: 'Especiales', descripcion: 'Pollo frito', precio: 25000, stock: 10, imagen: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&auto=format&fit=crop&q=60' },
+  { id: 26, nombre: 'Alitas BBQ', categoria: 'Especiales', descripcion: 'Alitas melosas', precio: 18000, stock: 10, imagen: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=500&auto=format&fit=crop&q=60' },
+  { id: 27, nombre: 'Alitas Picantes', categoria: 'Especiales', descripcion: 'Alitas buffalo', precio: 18000, stock: 10, imagen: 'https://images.unsplash.com/photo-1608039755401-742074f0548d?w=500&auto=format&fit=crop&q=60' },
+  { id: 28, nombre: 'Helado', categoria: 'Postres', descripcion: 'Copa helado', precio: 6000, stock: 10, imagen: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&auto=format&fit=crop&q=60' },
+  { id: 29, nombre: 'Postre Tres Leches', categoria: 'Postres', descripcion: 'Postre de la casa', precio: 8000, stock: 10, imagen: 'https://images.unsplash.com/photo-1464349172961-4a465ffb8b42?w=500&auto=format&fit=crop&q=60' },
+  { id: 30, nombre: 'Brownie', categoria: 'Postres', descripcion: 'Brownie chocolate', precio: 7000, stock: 10, imagen: 'https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=500&auto=format&fit=crop&q=60' },
+  // IMÁGENES REPARADAS AQUÍ (Usando fuentes CDN estables de Unsplash)
+  { id: 31, nombre: 'Crepes de Nutella', categoria: 'Postres', descripcion: 'Con frutas frescas', precio: 12000, stock: 10, imagen: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?w=500&auto=format&fit=crop&q=60' },
+  { id: 32, nombre: 'Churros con Chocolate', categoria: 'Postres', descripcion: 'Porción de 5 unidades', precio: 10000, stock: 10, imagen: 'https://images.unsplash.com/photo-1624371414361-e6e8ea48fc3e?w=500&auto=format&fit=crop&q=60' }
 ])
 
 const carrito = ref([])
@@ -210,7 +210,7 @@ const agregarProductoNuevo = () => {
 const agregarCarrito = (p) => {
   const existe = carrito.value.find(item => item.id === p.id)
   if (existe) existe.cantidad++
-  else carrito.value.push({ ...p, cantidad: 1 })
+  else carrito.value.push({ ...p, Pattern: 1, cantidad: 1 })
   p.stock--
   lanzarNotificacion('🛒 Agregado al carrito')
 }
@@ -299,7 +299,7 @@ body { margin: 0; font-family: 'Poppins', sans-serif; background: #f4f7f6; }
 }
 .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column; }
 .card:hover { transform: translateY(-5px); }
-.card-img { position: relative; height: 180px; }
+.card-img { position: relative; height: 180px; background-color: #f0f0f0; }
 .card-img img { width: 100%; height: 100%; object-fit: cover; }
 .tag-categoria {
   position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.6);
@@ -307,7 +307,7 @@ body { margin: 0; font-family: 'Poppins', sans-serif; background: #f4f7f6; }
 }
 .card-info { padding: 15px; flex: 1; display: flex; flex-direction: column; }
 .card-info h3 { margin: 0; font-size: 1.1rem; }
-.desc { color: #777; font-size: 0.85rem; margin: 8px 0; }
+.desc { color: #777; font-size: 0.85rem; margin: 8px 0; min-height: 38px; }
 .precio { color: #ff5f6d; font-size: 1.2rem; margin: 10px 0; }
 .stock { font-weight: bold; font-size: 0.8rem; color: #555; }
 .sin-stock { color: red !important; }
@@ -356,7 +356,7 @@ button:disabled { background: #ccc !important; cursor: not-allowed; opacity: 0.6
 
 .carrito-items { flex: 1; overflow-y: auto; padding: 20px 25px; }
 
-/* Mensaje de carrito vacío bien centrado y separado de los bordes */
+/* Mensaje de carrito vacío alineado correctamente */
 .carrito-vacio {
   padding: 80px 30px;
   text-align: center;
