@@ -1,14 +1,4 @@
-¡Hecho! He tomado **exactamente tu código original** y le añadí la funcionalidad para abrir y cerrar el formulario sin alterar tus estilos, la lista de productos ni la lógica que ya tenías construida.
 
-### Los cambios añadidos son:
-
-1. Un nuevo estado reactivo `const mostrarFormulario = ref(false)`.
-2. Un botón estético en el header junto al carrito para controlar la apertura/cierre.
-3. El contenedor del formulario ahora usa un `v-if="mostrarFormulario"` para ocultarse o mostrarse dinámicamente.
-
-Aquí tienes todo tu código modificado:
-
-```vue
 <template>
 <div class="container">
 
@@ -908,4 +898,3 @@ flex-direction:column;
 
 </style>
 
-```
